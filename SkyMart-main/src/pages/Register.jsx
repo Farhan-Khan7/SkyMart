@@ -56,7 +56,7 @@ const Register = () => {
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-5">
           <div className="neu-sm w-9 h-9 rounded-2xl flex items-center justify-center">
-            <ShoppingBag className="w-4 h-4 text-[#FF8FC7] fill-[#FF8FC7]" />
+            <ShoppingBag className="w-4 h-4 text-[#FF8FC7] " />
           </div>
 
           <h1 className="text-3xl font-bold">

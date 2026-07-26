@@ -66,7 +66,7 @@ const Login = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div className="neu w-12 h-12 rounded-2xl flex items-center justify-center">
-            <ShoppingBag className="w-6 h-6 text-[#FF8FC7] fill-[#FF8FC7]" />
+            <ShoppingBag className="w-6 h-6 text-[#FF8FC7]" />
           </div>
 
           <h1 className="text-3xl font-bold">
