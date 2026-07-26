@@ -97,9 +97,9 @@ _Add screenshots here after completing the project._
 
 **Farhan Khan**
 
-GitHub: *(Add your GitHub Profile Link)*
+GitHub: *(https://github.com/Farhan-Khan7)*
 
-LinkedIn: *(Add your LinkedIn Profile Link)*
+LinkedIn: *((https://www.linkedin.com/in/farhan-khan-b99737254/))*
 
 ---
 
