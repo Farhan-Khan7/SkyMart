@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: "Syne";
+  src: url("./assets/fonts/Syne.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  font-family: "Syne", sans-serif;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --color-volt: #C8F400;
+  --color-muted: #6C6C6B;
+}
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: #C8F400;
+  border-radius: 20px;
+  border: 2px solid #0D0D0D;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #d8ff2f;
+}
