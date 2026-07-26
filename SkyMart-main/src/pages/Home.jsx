@@ -48,7 +48,7 @@ const features = [
   {
     title: "Fast Delivery",
     desc: "Same-day delivery",
-    icon: <Truck className="text-[#C8F400]" size={28} />,
+    icon: <Truck className="text-[#FF8FC7]" size={28} />,
   },
   {
     title: "Secure Payments",
@@ -82,14 +82,14 @@ const newArrivalProducts = [...products]
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="bg-[#0D0D0D] min-h-screen text-white">
+    <div className="min-h-screen text-white" style={{ background: "var(--bg)" }}>
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
         {/* Hero */}
-        <section className="relative overflow-hidden rounded-3xl border border-[#2A2A2A] bg-gradient-to-br from-[#181818] to-[#0D0D0D] px-6 py-8 md:px-10 md:py-10">
+        <section className="neu relative overflow-hidden rounded-2xl px-6 py-8 md:px-10 md:py-10">
           {/* Grid Background */}
-          <div className="absolute inset-0 opacity-35 pointer-events-none">
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div
               className="w-full h-full"
               style={{
@@ -110,14 +110,14 @@ const newArrivalProducts = [...products]
           <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Left */}
             <div className="max-w-2xl">
-              <p className="uppercase tracking-[5px] text-[#C8F400] text-xs font-medium">
+              <p className="uppercase tracking-[5px] text-[#FF8FC7] text-xs font-medium">
                 Good Evening 👋
               </p>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-3 leading-tight">
                 Welcome Back,
                 <br />
-                <span className="text-[#C8F400]">
+                <span className="text-[#FF8FC7]">
                   {user?.fullName || "Guest"}!
                 </span>
               </h1>
@@ -130,13 +130,16 @@ const newArrivalProducts = [...products]
               <div className="flex flex-wrap gap-4 mt-6">
                 <button
                   onClick={() => navigate("/shop")}
-                  className="bg-[#C8F400] text-black px-7 py-3 rounded-2xl font-bold flex items-center gap-2 hover:scale-105 transition duration-300"
+                  className="neu-accent neu-btn text-black px-7 py-3 rounded-2xl font-bold flex items-center gap-2"
                 >
                   Shop Now
                   <ArrowRight size={18} />
                 </button>
 
-                <button  onClick={() => navigate("/shop")} className="border border-[#2A2A2A] bg-[#151515]/80 hover:border-[#C8F400] hover:text-[#C8F400] px-7 py-3 rounded-2xl transition duration-300">
+                <button
+                  onClick={() => navigate("/shop")}
+                  className="neu neu-btn hover:text-[#FF8FC7] px-7 py-3 rounded-2xl transition duration-300"
+                >
                   Explore
                 </button>
               </div>
@@ -145,13 +148,13 @@ const newArrivalProducts = [...products]
             {/* Right Cards */}
             <div className="grid grid-cols-1 gap-3 w-full sm:w-72">
               {/* Cart Card */}
-              <div className="flex items-center gap-4 bg-[#202A00]/90 border border-[#3C4F00] rounded-2xl px-5 py-4 backdrop-blur">
-                <div className="w-12 h-12 flex-shrink-0 rounded-xl border border-[#4D6400] flex items-center justify-center text-xl bg-[#293500]">
+              <div className="neu-sm flex items-center gap-4 rounded-2xl px-5 py-4">
+                <div className="neu w-12 h-12 flex-shrink-0 rounded-2xl flex items-center justify-center text-xl">
                   🛒
                 </div>
 
                 <div>
-                  <h2 className="text-3xl font-bold text-[#C8F400] leading-none">
+                  <h2 className="text-3xl font-bold text-[#FF8FC7] leading-none">
                     {cartItems.reduce((t, i) => t + i.quantity, 0)}
                   </h2>
 
@@ -160,8 +163,8 @@ const newArrivalProducts = [...products]
               </div>
 
               {/* Total Card */}
-              <div className="flex items-center gap-4 bg-[#151515]/90 border border-[#2A2A2A] rounded-2xl px-5 py-4 backdrop-blur">
-                <div className="w-12 h-12 flex-shrink-0 rounded-xl border border-[#3A3A3A] flex items-center justify-center text-xl bg-[#1E1E1E]">
+              <div className="neu-sm flex items-center gap-4 rounded-2xl px-5 py-4">
+                <div className="neu w-12 h-12 flex-shrink-0 rounded-2xl flex items-center justify-center text-xl">
                   $
                 </div>
 
@@ -190,7 +193,7 @@ const newArrivalProducts = [...products]
                 0,
               ),
               desc: "Products in cart",
-              icon: <ShoppingBag size={24} className="text-[#C8F400]" />,
+              icon: <ShoppingBag size={24} className="text-[#FF8FC7]" />,
             },
             {
               title: "Cart Value",
@@ -213,7 +216,7 @@ const newArrivalProducts = [...products]
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-[#151515] border border-[#2A2A2A] rounded-3xl p-6 hover:border-[#C8F400] hover:-translate-y-1 transition-all"
+              className="neu neu-btn rounded-2xl p-6 hover:-translate-y-1 transition-all"
             >
               <div className="flex justify-between items-start">
                 {/* Left Content */}
@@ -228,7 +231,7 @@ const newArrivalProducts = [...products]
                 </div>
 
                 {/* Right Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-[#202020] flex items-center justify-center">
+                <div className="neu-sm w-14 h-14 rounded-2xl flex items-center justify-center">
                   {item.icon}
                 </div>
               </div>
@@ -237,233 +240,176 @@ const newArrivalProducts = [...products]
         </section>
 
         {/* Categories */}
-       {/* Categories */}
-<section className="mt-14 sm:mt-16 lg:mt-20">
-  <div className="flex items-end justify-between mb-8">
-    <div>
-     
+        <section className="mt-14 sm:mt-16 lg:mt-20">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold mt-1">
+                Shop by Category
+              </h2>
+            </div>
 
-     <h2 className="text-xl sm:text-2xl font-bold mt-1">
-  Shop by Category
-</h2>
-    </div>
-
-    <button
-      onClick={() => navigate("/shop")}
-      className="hidden sm:flex items-center gap-2 text-[#C8F400] font-semibold hover:gap-3 transition-all"
-    >
-      View All
-      <ArrowRight size={18} />
-    </button>
-  </div>
-
-  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-    {categories.map((cat) => (
-      <div
-        key={cat.name}
-        onClick={() =>
-          navigate(`/shop?category=${encodeURIComponent(cat.value)}`)
-        }
-        className="bg-[#151515] border border-[#2A2A2A] rounded-3xl p-5 sm:p-6 hover:border-[#C8F400] hover:-translate-y-1 transition-all cursor-pointer group"
-      >
-        <div className="flex justify-between items-start">
-
-          <div>
-
-            <h3 className="text-lg sm:text-xl font-semibold group-hover:text-[#C8F400] transition">
-              {cat.name}
-            </h3>
-
-            <p className="text-sm text-[#6C6C6B] mt-2">
-              {cat.count}
-            </p>
-
+            <button
+              onClick={() => navigate("/shop")}
+              className="hidden sm:flex items-center gap-2 text-[#FF8FC7] font-semibold hover:gap-3 transition-all cursor-pointer"
+            >
+              View All
+              <ArrowRight size={18} />
+            </button>
           </div>
 
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#202020] flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-[#C8F400] group-hover:text-black transition">
-            {cat.icon}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {categories.map((cat) => (
+              <div
+                key={cat.name}
+                onClick={() =>
+                  navigate(`/shop?category=${encodeURIComponent(cat.value)}`)
+                }
+                className="neu neu-btn rounded-2xl p-5 sm:p-6 hover:-translate-y-1 transition-all cursor-pointer group"
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold group-hover:text-[#FF8FC7] transition">
+                      {cat.name}
+                    </h3>
+
+                    <p className="text-sm text-[#6C6C6B] mt-2">
+                      {cat.count}
+                    </p>
+                  </div>
+
+                  <div className="neu-sm w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl group-hover:text-[#FF8FC7] transition">
+                    {cat.icon}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+        </section>
 
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-       {/* Featured Products */}
-{/* Featured Products */}
+        {/* Featured Products */}
+        <section className="mt-16 lg:mt-20">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            {/* Top Rated */}
+            <div className="neu xl:col-span-2 rounded-2xl p-5 sm:p-6">
+              <div className="flex justify-between items-center mb-6">
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold mt-2">
+                    Top Rated
+                  </h2>
+                </div>
 
-<section className="mt-16 lg:mt-20">
-
-  <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-
-    {/* Top Rated */}
-
-    <div className="xl:col-span-2 bg-[#151515] border border-[#2A2A2A] rounded-3xl p-5 sm:p-6">
-
-      <div className="flex justify-between items-center mb-6">
-
-        <div>
-
-<h2 className="text-lg sm:text-xl font-bold mt-2">
-  Top Rated
-</h2>
-
-        </div>
-
-        <button
-          onClick={() => navigate("/shop?sort=rating")}
-          className="text-[#C8F400] flex items-center gap-2 font-semibold"
-        >
-          View All
-          <ArrowRight size={18} />
-        </button>
-
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-        {topRatedProducts.map((product) => (
-
-          <div
-            key={product.id}
-            onClick={() => navigate(`/product/${product.id}`)}
-            className="flex items-center gap-4 bg-[#1D1D1D] rounded-2xl p-4 hover:border hover:border-[#C8F400] transition cursor-pointer"
-          >
-
-            <img
-              src={product.thumbnail}
-              alt={product.title}
-              className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl p-2 object-contain"
-            />
-
-            <div className="flex-1">
-
-              <h3 className="text-sm sm:text-base font-semibold line-clamp-1">
-                {product.title}
-              </h3>
-
-              <p className="text-xs text-gray-400 capitalize mt-1">
-                {product.category}
-              </p>
-
-              <div className="flex justify-between mt-3">
-
-                <span className="text-[#C8F400] text-base sm:text-lg font-bold">
-                  ${product.price}
-                </span>
-
-                <span className="text-yellow-400 text-sm">
-                  ⭐ {product.rating}
-                </span>
-
+                <button
+                  onClick={() => navigate("/shop?sort=rating")}
+                  className="text-[#FF8FC7] flex items-center gap-2 font-semibold cursor-pointer"
+                >
+                  View All
+                  <ArrowRight size={18} />
+                </button>
               </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {topRatedProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="neu-sm neu-btn flex items-center gap-4 rounded-2xl p-4 transition cursor-pointer"
+                  >
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl p-2 object-contain"
+                    />
+
+                    <div className="flex-1">
+                      <h3 className="text-sm sm:text-base font-semibold line-clamp-1">
+                        {product.title}
+                      </h3>
+
+                      <p className="text-xs text-gray-400 capitalize mt-1">
+                        {product.category}
+                      </p>
+
+                      <div className="flex justify-between mt-3">
+                        <span className="text-[#FF8FC7] text-base sm:text-lg font-bold">
+                          ${product.price}
+                        </span>
+
+                        <span className="text-yellow-400 text-sm">
+                          ⭐ {product.rating}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-          </div>
+            {/* New Arrivals */}
+            <div className="neu rounded-2xl p-5 sm:p-6">
+              <div className="flex justify-between items-center mb-6">
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold mt-2">
+                    New Arrivals
+                  </h2>
+                </div>
 
-        ))}
+                <ArrowRight className="text-[#FF8FC7]" />
+              </div>
 
-      </div>
+              <div className="space-y-4">
+                {newArrivalProducts.slice(0, 3).map((product) => (
+                  <div
+                    key={product.id}
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="neu-sm neu-btn flex items-center gap-3 rounded-2xl p-3 transition cursor-pointer"
+                  >
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl p-2 object-contain"
+                    />
 
-    </div>
+                    <div className="flex-1">
+                      <h4 className="text-sm sm:text-base font-medium line-clamp-1">
+                        {product.title}
+                      </h4>
 
-    {/* New Arrivals */}
+                      <p className="text-[#FF8FC7] font-semibold mt-1">
+                        ${product.price}
+                      </p>
+                    </div>
 
-    <div className="bg-[#151515] border border-[#2A2A2A] rounded-3xl p-5 sm:p-6">
-
-      <div className="flex justify-between items-center mb-6">
-
-        <div>
-
-
-       <h2 className="text-lg sm:text-xl font-bold mt-2">
-  New Arrivals
-</h2>
-
-        </div>
-
-        <ArrowRight className="text-[#C8F400]" />
-
-      </div>
-
-      <div className="space-y-4">
-
-        {newArrivalProducts.slice(0, 3).map((product) => (
-
-          <div
-            key={product.id}
-            onClick={() => navigate(`/product/${product.id}`)}
-            className="flex items-center gap-3 bg-[#1D1D1D] rounded-2xl p-3 hover:border hover:border-[#C8F400] transition cursor-pointer"
-          >
-
-            <img
-              src={product.thumbnail}
-              alt={product.title}
-              className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl p-2 object-contain"
-            />
-
-            <div className="flex-1">
-
-              <h4 className="text-sm sm:text-base font-medium line-clamp-1">
-                {product.title}
-              </h4>
-
-              <p className="text-[#C8F400] font-semibold mt-1">
-                ${product.price}
-              </p>
-
+                    <span className="bg-[#FF8FC7] text-black text-[10px] font-bold px-2 py-1 rounded-full">
+                      NEW
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            <span className="bg-[#C8F400] text-black text-[10px] font-bold px-2 py-1 rounded-full">
-              NEW
-            </span>
-
           </div>
-
-        ))}
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+        </section>
 
         {/* Features */}
-    {/* Features */}
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
+          {features.map((item) => (
+            <div
+              key={item.title}
+              className="neu rounded-2xl p-5 sm:p-6 flex items-center gap-5 transition"
+            >
+              {item.icon}
 
-<section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-16">
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  {item.title}
+                </h3>
 
-  {features.map((item) => (
-
-    <div
-      key={item.title}
-      className="bg-[#151515] border border-[#2A2A2A] rounded-3xl p-5 sm:p-6 flex items-center gap-5 hover:border-[#C8F400] transition"
-    >
-
-      {item.icon}
-
-      <div>
-
-        <h3 className="text-lg sm:text-xl font-semibold">
-          {item.title}
-        </h3>
-
-        <p className="text-sm text-[#6C6C6B] mt-1">
-          {item.desc}
-        </p>
-
-      </div>
-
-    </div>
-
-  ))}
-
-</section>
-
-        {/* Footer */}
+                <p className="text-sm text-[#6C6C6B] mt-1">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </section>
       </div>
       <Footer />
     </div>

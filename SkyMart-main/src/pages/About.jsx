@@ -20,22 +20,22 @@ const About = () => {
 
   const stats = [
     {
-      icon: <Package size={24} className="text-[#C8F400]" />,
+      icon: <Package size={24} className="text-[#FF8FC7]" />,
       value: "20K+",
       label: "Products",
     },
     {
-      icon: <Users size={24} className="text-[#C8F400]" />,
+      icon: <Users size={24} className="text-[#FF8FC7]" />,
       value: "50K+",
       label: "Happy Customers",
     },
     {
-      icon: <Star size={24} className="text-[#C8F400]" />,
+      icon: <Star size={24} className="text-[#FF8FC7]" />,
       value: "4.9",
       label: "Average Rating",
     },
     {
-      icon: <Truck size={24} className="text-[#C8F400]" />,
+      icon: <Truck size={24} className="text-[#FF8FC7]" />,
       value: "99%",
       label: "On-time Delivery",
     },
@@ -88,21 +88,21 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] text-white">
+    <div className="min-h-screen text-white" style={{ background: "var(--bg)" }}>
       <Navbar />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         {/* Hero */}
         <div className="max-w-3xl mx-auto text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-[#C8F400] flex items-center justify-center mx-auto">
-            <Zap size={32} className="text-black fill-black" />
+          <div className="neu w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto">
+            <Zap size={32} className="text-[#FF8FC7] fill-[#FF8FC7]" />
           </div>
 
           <h1
             className="mt-6 md:mt-8 text-4xl sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "Clash Display" }}
           >
-            About <span className="text-[#C8F400]">SkyMart</span>
+            About <span className="text-[#FF8FC7]">SkyMart</span>
           </h1>
 
           <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-[#6C6C6B]">
@@ -114,7 +114,7 @@ const About = () => {
 
           <button
             onClick={() => navigate("/shop")}
-            className="mt-8 md:mt-10 h-12 md:h-14 px-6 md:px-8 rounded-2xl bg-[#C8F400] text-black font-semibold flex items-center gap-2 mx-auto hover:bg-lime-300 transition"
+            className="neu-accent neu-btn mt-8 md:mt-10 h-12 md:h-14 px-6 md:px-8 rounded-2xl text-black font-semibold flex items-center gap-2 mx-auto"
           >
             Browse Products
             <ArrowRight size={18} />
@@ -126,7 +126,7 @@ const About = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className="bg-[#121212] border border-[#2A2A2A] rounded-3xl p-6 md:p-8 text-center hover:border-[#C8F400] transition-all"
+              className="neu neu-btn rounded-2xl p-6 md:p-8 text-center transition-all"
             >
               <div className="flex justify-center">{item.icon}</div>
 
@@ -144,7 +144,7 @@ const About = () => {
 
         {/* Story */}
         <div className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <div className="bg-[#121212] border border-[#2A2A2A] rounded-[30px] p-6 md:p-10">
+          <div className="neu rounded-2xl p-6 md:p-10">
             <h2
               className="text-3xl md:text-4xl mb-6"
               style={{ fontFamily: "Clash Display" }}
@@ -160,10 +160,10 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-[#121212] border border-[#2A2A2A] rounded-[30px] p-6 md:p-10">
+          <div className="neu rounded-2xl p-6 md:p-10">
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <div className="w-14 h-14 rounded-2xl bg-[#C8F400]/20 flex items-center justify-center">
-                <Target className="text-[#C8F400]" />
+              <div className="neu-sm w-14 h-14 rounded-2xl flex items-center justify-center">
+                <Target className="text-[#FF8FC7]" />
               </div>
 
               <div>
@@ -178,8 +178,8 @@ const About = () => {
             </div>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <div className="w-14 h-14 rounded-2xl bg-[#C8F400]/20 flex items-center justify-center">
-                <Eye className="text-[#C8F400]" />
+              <div className="neu-sm w-14 h-14 rounded-2xl flex items-center justify-center">
+                <Eye className="text-[#FF8FC7]" />
               </div>
 
               <div>
@@ -208,9 +208,9 @@ const About = () => {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="bg-[#121212] border border-[#2A2A2A] rounded-3xl p-6 md:p-8 flex flex-col sm:flex-row gap-5 hover:border-[#C8F400] transition-all"
+                className="neu rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-5 transition-all"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#C8F400]/20 flex items-center justify-center text-[#C8F400] shrink-0">
+                <div className="neu-sm w-14 h-14 rounded-2xl flex items-center justify-center text-[#FF8FC7] shrink-0">
                   {item.icon}
                 </div>
 
@@ -237,7 +237,7 @@ const About = () => {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-[#121212] border border-[#2A2A2A] rounded-3xl p-6 md:p-8 text-center hover:border-[#C8F400] transition"
+                className="neu neu-btn rounded-2xl p-6 md:p-8 text-center transition"
               >
                 <div
                   className={`w-16 h-16 rounded-2xl ${member.color} mx-auto flex items-center justify-center text-black text-2xl font-bold`}
@@ -254,7 +254,7 @@ const About = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 md:mt-24 border border-[#2A2A2A] rounded-[32px] bg-[#121212] py-10 md:py-16 px-4 text-center">
+        <div className="neu mt-16 md:mt-24 rounded-2xl py-10 md:py-16 px-4 text-center">
           <h2
             className="text-3xl md:text-5xl"
             style={{ fontFamily: "Clash Display" }}
@@ -268,7 +268,7 @@ const About = () => {
 
           <button
             onClick={() => navigate("/shop")}
-            className="mt-8 h-12 md:h-14 px-6 md:px-8 rounded-2xl bg-[#C8F400] text-black font-semibold flex items-center gap-2 mx-auto hover:bg-lime-300 transition"
+            className="neu-accent neu-btn mt-8 h-12 md:h-14 px-6 md:px-8 rounded-2xl text-black font-semibold flex items-center gap-2 mx-auto"
           >
             Browse Products
             <ArrowRight size={18} />

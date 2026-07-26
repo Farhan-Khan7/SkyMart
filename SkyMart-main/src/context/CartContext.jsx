@@ -1,11 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 
 export const CartContext = createContext();
 
+const CART_STORAGE_KEY = "skymart_cart";
+
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem(CART_STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch (err) {
+      console.log("Failed to load cart from localStorage:", err);
+      return [];
+    }
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch (err) {
+      console.log("Failed to save cart to localStorage:", err);
+    }
+  }, [cartItems]);
 
  const addToCart = (product) => {
   const exists = cartItems.find((item) => item.id === product.id);
@@ -27,12 +45,12 @@ export const CartProvider = ({ children }) => {
 
   toast.success("Added to cart ✅", {
     style: {
-      background: "#C8F400",
+      background: "#FF8FC7",
       color: "#000",
     },
     iconTheme: {
       primary: "#000",
-      secondary: "#C8F400",
+      secondary: "#FF8FC7",
     },
   });
 };

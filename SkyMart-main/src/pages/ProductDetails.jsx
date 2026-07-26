@@ -34,11 +34,6 @@ const ProductDetails = () => {
   const isAdded = cartItems.some((item) => item.id === Number(id));
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -72,26 +67,29 @@ const ProductDetails = () => {
       <>
         <Navbar />
 
-        <div className="min-h-screen bg-[#0D0D0D] animate-pulse px-6 py-10">
+        <div
+          className="min-h-screen animate-pulse px-6 py-10"
+          style={{ background: "var(--bg)" }}
+        >
           <div className="max-w-7xl mx-auto">
-            <div className="h-5 w-48 bg-[#1b1b1b] rounded mb-8"></div>
+            <div className="neu-sm h-5 w-48 rounded-2xl mb-8"></div>
 
             <div className="grid lg:grid-cols-2 gap-10">
-              <div className="bg-[#1b1b1b] rounded-3xl h-[550px]"></div>
+              <div className="neu rounded-2xl h-[550px]"></div>
 
               <div>
-                <div className="h-8 w-24 bg-[#1b1b1b] rounded mb-5"></div>
+                <div className="neu-sm h-8 w-24 rounded-2xl mb-5"></div>
 
-                <div className="h-12 w-80 bg-[#1b1b1b] rounded mb-6"></div>
+                <div className="neu-sm h-12 w-80 rounded-2xl mb-6"></div>
 
-                <div className="h-8 w-40 bg-[#1b1b1b] rounded mb-6"></div>
+                <div className="neu-sm h-8 w-40 rounded-2xl mb-6"></div>
 
                 <div className="space-y-3">
-                  <div className="h-4 bg-[#1b1b1b] rounded"></div>
+                  <div className="neu-sm h-4 rounded-2xl"></div>
 
-                  <div className="h-4 bg-[#1b1b1b] rounded"></div>
+                  <div className="neu-sm h-4 rounded-2xl"></div>
 
-                  <div className="h-4 w-3/4 bg-[#1b1b1b] rounded"></div>
+                  <div className="neu-sm h-4 w-3/4 rounded-2xl"></div>
                 </div>
               </div>
             </div>
@@ -106,7 +104,10 @@ const ProductDetails = () => {
       <>
         <Navbar />
 
-        <div className="min-h-screen bg-[#0D0D0D] flex justify-center items-center text-red-500 text-xl">
+        <div
+          className="min-h-screen flex justify-center items-center text-red-500 text-xl"
+          style={{ background: "var(--bg)" }}
+        >
           {error}
         </div>
       </>
@@ -120,7 +121,8 @@ const ProductDetails = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="bg-[#0D0D0D] min-h-screen text-white"
+        className="min-h-screen text-white"
+        style={{ background: "var(--bg)" }}
       >
         <div className="max-w-7xl mx-auto px-5 lg:px-8 py-10">
           {/* Breadcrumb */}
@@ -128,7 +130,7 @@ const ProductDetails = () => {
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
             <button
               onClick={() => navigate(-1)}
-              className="hover:text-[#C8F400] flex items-center gap-1"
+              className="hover:text-[#FF8FC7] flex items-center gap-1"
             >
               <ArrowLeft size={15} />
             </button>
@@ -152,7 +154,7 @@ const ProductDetails = () => {
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              className="bg-white rounded-3xl p-6 lg:p-8 flex justify-center items-center min-h-[420px] lg:min-h-[500px]"
+              className="bg-white rounded-2xl p-6 lg:p-8 flex justify-center items-center min-h-[420px] lg:min-h-[500px]"
             >
               <img
                 src={product.thumbnail}
@@ -169,7 +171,7 @@ const ProductDetails = () => {
             >
               {/* Category */}
 
-              <span className="inline-block bg-[#1A2600] text-[#C8F400] text-xs lg:text-sm px-3 py-1 rounded-full font-semibold">
+              <span className="neu-sm inline-block text-[#FF8FC7] text-xs lg:text-sm px-3 py-1 rounded-full font-semibold">
                 {product.category}
               </span>
 
@@ -200,15 +202,15 @@ const ProductDetails = () => {
                 </span>
               </div>
 
-              <hr className="border-[#333] my-5" />
+              <div className="my-5 h-px bg-white/5" />
 
               {/* Price */}
 
-              <h2 className="text-[#C8F400] text-4xl font-bold">
+              <h2 className="text-[#FF8FC7] text-4xl font-bold">
                 ${product.price}
               </h2>
 
-              <hr className="border-[#333] my-5" />
+              <div className="my-5 h-px bg-white/5" />
 
               {/* Description */}
 
@@ -220,21 +222,21 @@ const ProductDetails = () => {
 
               <div className="flex gap-3 mt-8">
                 {isAdded ? (
-                  <button className="flex-1 h-14 rounded-xl bg-green-700 text-white font-semibold flex justify-center items-center gap-2">
+                  <button className="neu-inset flex-1 h-14 rounded-2xl text-green-400 font-semibold flex justify-center items-center gap-2">
                     <Check size={18} />
                     Added To Cart
                   </button>
                 ) : (
                   <button
                     onClick={() => addToCart(product)}
-                    className="flex-1 h-14 rounded-xl bg-[#C8F400] hover:bg-lime-300 transition text-black font-semibold flex justify-center items-center gap-2"
+                    className="neu-accent neu-btn flex-1 h-14 rounded-2xl text-black font-semibold flex justify-center items-center gap-2"
                   >
                     <ShoppingCart size={18} />
                     Add To Cart
                   </button>
                 )}
 
-                <button className="w-14 h-14 rounded-xl border border-[#333] flex justify-center items-center hover:border-[#C8F400] transition">
+                <button className="neu neu-btn w-14 h-14 rounded-2xl flex justify-center items-center hover:text-[#FF8FC7] transition">
                   <Heart size={20} />
                 </button>
               </div>
@@ -242,8 +244,8 @@ const ProductDetails = () => {
               {/* Features */}
 
               <div className="grid grid-cols-3 gap-2 mt-5">
-                <div className="border border-[#333] rounded-lg p-3 text-center hover:border-[#C8F400] transition">
-                  <Truck className="mx-auto text-[#C8F400]" size={18} />
+                <div className="neu-sm rounded-2xl p-3 text-center transition">
+                  <Truck className="mx-auto text-[#FF8FC7]" size={18} />
 
                   <h3 className="mt-1 text-xs font-semibold">Free Delivery</h3>
 
@@ -252,8 +254,8 @@ const ProductDetails = () => {
                   </p>
                 </div>
 
-                <div className="border border-[#333] rounded-lg p-3 text-center hover:border-[#C8F400] transition">
-                  <ShieldCheck className="mx-auto text-[#C8F400]" size={18} />
+                <div className="neu-sm rounded-2xl p-3 text-center transition">
+                  <ShieldCheck className="mx-auto text-[#FF8FC7]" size={18} />
 
                   <h3 className="mt-1 text-xs font-semibold">Secure Pay</h3>
 
@@ -262,8 +264,8 @@ const ProductDetails = () => {
                   </p>
                 </div>
 
-                <div className="border border-[#333] rounded-lg p-3 text-center hover:border-[#C8F400] transition">
-                  <RotateCcw className="mx-auto text-[#C8F400]" size={18} />
+                <div className="neu-sm rounded-2xl p-3 text-center transition">
+                  <RotateCcw className="mx-auto text-[#FF8FC7]" size={18} />
 
                   <h3 className="mt-1 text-xs font-semibold">Easy Returns</h3>
 
@@ -276,23 +278,23 @@ const ProductDetails = () => {
               {/* Previous Next */}
 
               <div className="grid grid-cols-2 gap-3 mt-8">
-               <button
-  onClick={() => navigate(`/products/${Number(id) - 1}`)}
-  disabled={Number(id) === 1}
-  className="h-12 rounded-xl bg-[#1E1E1E] hover:bg-[#2A2A2A] flex justify-center items-center gap-2 transition disabled:opacity-40"
->
-  <ChevronLeft size={18} />
-  Previous
-</button>
+                <button
+                  onClick={() => navigate(`/products/${Number(id) - 1}`)}
+                  disabled={Number(id) === 1}
+                  className="neu neu-btn h-12 rounded-2xl flex justify-center items-center gap-2 transition disabled:opacity-40"
+                >
+                  <ChevronLeft size={18} />
+                  Previous
+                </button>
 
-<button
-  onClick={() => navigate(`/products/${Number(id) + 1}`)}
-  disabled={Number(id) === 30}
-  className="h-12 rounded-xl bg-[#C8F400] hover:bg-lime-300 text-black font-semibold flex justify-center items-center gap-2 transition disabled:opacity-40"
->
-  Next
-  <ChevronRight size={18} />
-</button>
+                <button
+                  onClick={() => navigate(`/products/${Number(id) + 1}`)}
+                  disabled={Number(id) === 30}
+                  className="neu-accent neu-btn h-12 rounded-2xl text-black font-semibold flex justify-center items-center gap-2 transition disabled:opacity-40"
+                >
+                  Next
+                  <ChevronRight size={18} />
+                </button>
               </div>
             </motion.div>
           </div>
@@ -308,7 +310,7 @@ const ProductDetails = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center text-gray-500 py-16 border border-[#222] rounded-3xl">
+              <div className="neu text-center text-gray-500 py-16 rounded-2xl">
                 No related products found.
               </div>
             )}
@@ -316,8 +318,6 @@ const ProductDetails = () => {
         </div>
          <Footer />
       </motion.div>
-
-     
     </>
   );
 };

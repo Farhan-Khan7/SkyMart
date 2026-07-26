@@ -10,7 +10,7 @@ const SearchFilter = ({
   setSort,
 }) => {
   return (
-    <div className="mt-8 border border-[#2A2A2A] rounded-3xl p-4 sm:p-5 bg-[#111111]">
+    <div className="neu mt-8 rounded-2xl p-4 sm:p-5">
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Search */}
         <div className="relative flex-1">
@@ -24,7 +24,7 @@ const SearchFilter = ({
             placeholder="Search products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full h-14 bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl pl-12 pr-4 text-white placeholder:text-[#6C6C6B] outline-none focus:border-[#C8F400] transition"
+            className="neu-inset w-full h-14 rounded-2xl pl-12 pr-4 text-white placeholder:text-[#6C6C6B] outline-none transition"
           />
         </div>
 
@@ -33,7 +33,7 @@ const SearchFilter = ({
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full h-14 appearance-none bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl px-4 pr-12 text-white outline-none focus:border-[#C8F400] transition cursor-pointer"
+            className="neu-inset w-full h-14 appearance-none rounded-2xl px-4 pr-12 text-white outline-none transition cursor-pointer"
           >
             <option value="all">All Categories</option>
             <option value="beauty">Beauty</option>
@@ -53,7 +53,7 @@ const SearchFilter = ({
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="w-full h-14 appearance-none bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl px-4 pr-12 text-white outline-none focus:border-[#C8F400] transition cursor-pointer"
+            className="neu-inset w-full h-14 appearance-none rounded-2xl px-4 pr-12 text-white outline-none transition cursor-pointer"
           >
             <option value="featured">Featured</option>
             <option value="low-high">Price: Low → High</option>

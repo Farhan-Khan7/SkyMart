@@ -19,13 +19,92 @@ body {
 }
 
 @theme {
-  --color-volt: #C8F400;
+  --color-volt: #FF8FC7;
   --color-muted: #6C6C6B;
 }
+
+/* ---------- Neumorphism system ---------- */
+:root {
+  --bg: #0a0a0a;
+  --text: #EDEDED;
+  --text-soft: #8A8A8A;
+  --accent: #FF8FC7;
+  --shadow-light: #232323;
+  --shadow-dark: #000000;
+}
+
 html,
 body,
 #root {
   overflow-x: hidden;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Raised neumorphic surface - default for cards, panels, buttons */
+.neu {
+  background: var(--bg);
+  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+}
+
+/* Smaller raised surface - for chips, badges, icon boxes */
+.neu-sm {
+  background: var(--bg);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+}
+
+/* Pressed-in surface - for inputs, selects, textareas */
+.neu-inset {
+  background: var(--bg);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+}
+
+/* Interactive press feedback for clickable neu elements */
+.neu-btn {
+  transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.neu-btn:hover {
+  box-shadow: 10px 10px 18px var(--shadow-dark), -10px -10px 18px var(--shadow-light);
+}
+
+.neu-btn:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
+  transform: scale(0.97);
+}
+
+/* Accent-glow variant for primary CTAs, keeps the lime fill but with a soft glow instead of a hard border */
+.neu-accent {
+  background: var(--accent);
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.45), -4px -4px 12px rgba(255, 107, 53, 0.08);
+}
+
+.neu-accent:active {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4), inset -3px -3px 6px rgba(255, 107, 53, 0.15);
+  transform: scale(0.97);
+}
+
+input,
+select,
+textarea {
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-soft);
+}
+
+select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Tailwind v4 preflight resets buttons to the default arrow cursor;
+   restore the pointer cursor everywhere a button is actually clickable */
+button:not(:disabled) {
+  cursor: pointer;
 }
 
 /* Scrollbar */
@@ -35,17 +114,17 @@ body,
 
 /* Track (background) */
 ::-webkit-scrollbar-track {
-  background: #0D0D0D;
+  background: var(--bg);
 }
 
 /* Scroll thumb */
 ::-webkit-scrollbar-thumb {
-  background: #C8F400;
+  background: var(--accent);
   border-radius: 20px;
-  border: 2px solid #0D0D0D;
+  border: 2px solid var(--bg);
 }
 
 /* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
-  background: #d8ff2f;
+  background: #FFC1DE;
 }

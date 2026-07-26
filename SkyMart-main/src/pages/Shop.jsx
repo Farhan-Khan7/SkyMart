@@ -58,7 +58,7 @@ const filteredProducts = [...products]
     }
   });
   return (
-    <div className="bg-[#0D0D0D] min-h-screen text-white">
+    <div className="min-h-screen text-white" style={{ background: "var(--bg)" }}>
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-8 py-10">

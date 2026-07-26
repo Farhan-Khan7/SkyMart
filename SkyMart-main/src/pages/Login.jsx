@@ -37,13 +37,12 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] flex">
+    <div className="min-h-screen flex" style={{ background: "var(--bg)" }}>
       {/* LEFT SECTION */}
       <div
         className="
         hidden lg:flex
         lg:w-1/2
-        border-r border-[#2A2A2A]
         flex-col
         px-8 xl:px-14
         py-10
@@ -52,20 +51,20 @@ const Login = () => {
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[#C8F400] flex items-center justify-center">
-            <Zap className="w-6 h-6 text-black fill-black" />
+          <div className="neu w-12 h-12 rounded-2xl flex items-center justify-center">
+            <Zap className="w-6 h-6 text-[#FF8FC7] fill-[#FF8FC7]" />
           </div>
 
           <h1 className="text-3xl font-bold">
             <span className="text-white">Sky</span>
-            <span className="text-[#C8F400]">Mart</span>
+            <span className="text-[#FF8FC7]">Mart</span>
           </h1>
         </div>
 
         {/* Content */}
 
         <div className="mt-20 xl:mt-28">
-          <p className="text-[#C8F400] font-semibold tracking-widest text-sm">
+          <p className="text-[#FF8FC7] font-semibold tracking-widest text-sm">
             WELCOME BACK
           </p>
 
@@ -81,7 +80,7 @@ const Login = () => {
           >
             Shop the future.
             <br />
-            <span className="text-[#C8F400]">Today.</span>
+            <span className="text-[#FF8FC7]">Today.</span>
           </h2>
 
           <p
@@ -116,18 +115,9 @@ const Login = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="
-                h-24
-                border
-                border-[#444]
-                rounded-2xl
-                flex
-                flex-col
-                items-center
-                justify-center
-                "
+                className="neu h-24 rounded-2xl flex flex-col items-center justify-center"
               >
-                <h3 className="text-[#C8F400] text-xl xl:text-2xl font-bold">
+                <h3 className="text-[#FF8FC7] text-xl xl:text-2xl font-bold">
                   {item[0]}
                 </h3>
 
@@ -152,17 +142,7 @@ const Login = () => {
         "
       >
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
-          <div
-            className="
-            rounded-3xl
-            border
-            border-[#2A2A2A]
-            bg-[#111111]
-            p-6
-            sm:p-8
-            shadow-xl
-            "
-          >
+          <div className="neu rounded-2xl p-6 sm:p-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Sign in
             </h2>
@@ -174,7 +154,7 @@ const Login = () => {
             {/* EMAIL */}
 
             <div className="mt-8 relative">
-              <Mail className="absolute left-5 top-4 text-[#666]" size={20} />
+              <Mail className="absolute left-5 top-4 text-[#666] z-10" size={20} />
 
               <input
                 type="email"
@@ -187,17 +167,15 @@ const Login = () => {
                   },
                 })}
                 className="
+                neu-inset
                 w-full
                 h-14
                 rounded-2xl
-                bg-[#1F1F1F]
-                border border-[#303030]
                 pl-14
                 pr-5
                 text-white
                 placeholder:text-[#666]
                 outline-none
-                focus:border-[#C8F400]
                 "
               />
 
@@ -211,7 +189,7 @@ const Login = () => {
             {/* PASSWORD */}
 
             <div className="mt-5 relative">
-              <Lock className="absolute left-5 top-4 text-[#666]" size={20} />
+              <Lock className="absolute left-5 top-4 text-[#666] z-10" size={20} />
 
               <input
                 type={showPassword ? "text" : "password"}
@@ -226,17 +204,15 @@ const Login = () => {
                   },
                 })}
                 className="
+                neu-inset
                 w-full
                 h-14
                 rounded-2xl
-                bg-[#1F1F1F]
-                border border-[#303030]
                 pl-14
                 pr-12
                 text-white
                 placeholder:text-[#666]
                 outline-none
-                focus:border-[#C8F400]
                 "
               />
 
@@ -248,6 +224,7 @@ const Login = () => {
                 right-5
                 top-4
                 text-[#666]
+                z-10
                 "
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -265,16 +242,15 @@ const Login = () => {
             <button
               type="submit"
               className="
+              neu-accent
+              neu-btn
               mt-8
               w-full
               h-14
               rounded-2xl
-              bg-[#C8F400]
               text-black
               font-bold
               text-lg
-              hover:brightness-95
-              transition
               "
             >
               Sign in →
@@ -288,7 +264,7 @@ const Login = () => {
                 onClick={() => navigate("/register")}
                 className="
                 ml-2
-                text-[#C8F400]
+                text-[#FF8FC7]
                 font-semibold
                 cursor-pointer
                 "

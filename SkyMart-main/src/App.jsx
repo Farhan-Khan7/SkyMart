@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <div className="h-screen bg-black">
+    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
        <Toaster position="top-right" />
       <AppRoutes />
     </div>

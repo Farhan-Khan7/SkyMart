@@ -15,10 +15,10 @@ const ProductCard = ({ product }) => {
         whileHover={{ y: -8 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.25 }}
-        className="group bg-[#121212] border border-[#2A2A2A] rounded-[28px] overflow-hidden hover:border-[#C8F400] transition-all duration-300 cursor-pointer"
+        className="neu group rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
       >
         {/* Image */}
-        <div className="relative bg-white h-[235px] flex items-center justify-center px-6 overflow-hidden">
+        <div className="relative bg-white h-[235px] flex items-center justify-center px-6 overflow-hidden rounded-t-2xl">
           <span className="absolute top-4 left-4 bg-[#6B6B6B] text-white text-[12px] px-3 py-1 rounded-full capitalize font-medium z-10">
             {product.category}
           </span>
@@ -64,12 +64,12 @@ const ProductCard = ({ product }) => {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-[#2A2A2A] my-4"></div>
+          <div className="border-t border-white/5 my-4"></div>
 
           {/* Bottom */}
           <div className="flex items-center justify-between">
             <h2
-              className="text-[18px] text-[#C8F400] font-semibold"
+              className="text-[18px] text-[#FF8FC7] font-semibold"
               style={{ fontFamily: "Clash Display" }}
             >
               ${product.price}
@@ -81,7 +81,7 @@ const ProductCard = ({ product }) => {
                   e.preventDefault();
                   e.stopPropagation();
                 }}
-                className="h-9 px-4 rounded-xl bg-green-900/30 border border-green-700 text-green-400 flex items-center gap-2 text-sm font-medium"
+                className="neu-inset h-9 px-4 rounded-2xl text-green-400 flex items-center gap-2 text-sm font-medium"
               >
                 <Check size={15} />
                 Added
@@ -93,7 +93,7 @@ const ProductCard = ({ product }) => {
                   e.stopPropagation();
                   addToCart(product);
                 }}
-                className="h-9 px-5 rounded-xl bg-[#C8F400] text-black flex items-center gap-2 text-sm font-semibold hover:bg-[#d8ff2f] transition-colors duration-300"
+                className="neu-accent neu-btn h-9 px-5 rounded-2xl text-black flex items-center gap-2 text-sm font-semibold"
               >
                 <ShoppingCart size={15} />
                 Add

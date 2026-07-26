@@ -35,18 +35,26 @@ const Register = () => {
     reset();
   };
 
+  const inputClass = (fieldError) =>
+    `neu-inset w-full h-12 rounded-2xl px-4 text-sm text-white placeholder:text-[#6C6C6B] outline-none transition ${
+      fieldError ? "shadow-[0_0_0_1.5px_#ef4444]" : ""
+    }`;
+
   return (
-    <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center px-4 py-5">
-      <div className="w-full max-w-[430px] rounded-[28px] border border-[#2A2A2A] bg-[#121212] px-7 py-6 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+    <div
+      className="min-h-screen flex items-center justify-center px-4 py-5"
+      style={{ background: "var(--bg)" }}
+    >
+      <div className="neu w-full max-w-[430px] rounded-2xl px-7 py-6">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-5">
-          <div className="w-9 h-9 rounded-lg bg-[#C8F400] flex items-center justify-center">
-            <Zap className="w-4 h-4 text-black fill-black" />
+          <div className="neu-sm w-9 h-9 rounded-2xl flex items-center justify-center">
+            <Zap className="w-4 h-4 text-[#FF8FC7] fill-[#FF8FC7]" />
           </div>
 
           <h1 className="text-3xl font-bold">
             <span className="text-white">Sky</span>
-            <span className="text-[#C8F400]">Mart</span>
+            <span className="text-[#FF8FC7]">Mart</span>
           </h1>
         </div>
 
@@ -70,12 +78,7 @@ const Register = () => {
                 },
               })}
               placeholder="Full name"
-              className={`w-full h-12 rounded-xl bg-[#1F1F1F] px-4 text-sm text-white placeholder:text-[#6C6C6B] outline-none transition
-              ${
-                errors.fullName
-                  ? "border border-red-500"
-                  : "border border-[#303030] focus:border-[#C8F400]"
-              }`}
+              className={inputClass(errors.fullName)}
             />
 
             {errors.fullName && (
@@ -97,12 +100,7 @@ const Register = () => {
                 },
               })}
               placeholder="Email address"
-              className={`w-full h-12 rounded-xl bg-[#1F1F1F] px-4 text-sm text-white placeholder:text-[#6C6C6B] outline-none transition
-              ${
-                errors.email
-                  ? "border border-red-500"
-                  : "border border-[#303030] focus:border-[#C8F400]"
-              }`}
+              className={inputClass(errors.email)}
             />
 
             {errors.email && (
@@ -125,12 +123,7 @@ const Register = () => {
                 },
               })}
               placeholder="Password"
-              className={`w-full h-12 rounded-xl bg-[#1F1F1F] px-4 text-sm text-white placeholder:text-[#6C6C6B] outline-none transition
-              ${
-                errors.password
-                  ? "border border-red-500"
-                  : "border border-[#303030] focus:border-[#C8F400]"
-              }`}
+              className={inputClass(errors.password)}
             />
 
             {errors.password && (
@@ -145,19 +138,19 @@ const Register = () => {
             <div className="flex gap-2">
               <div
                 className={`h-1.5 flex-1 rounded-full ${
-                  strength >= 1 ? "bg-[#C8F400]" : "bg-gray-700"
+                  strength >= 1 ? "bg-[#FF8FC7]" : "bg-gray-700"
                 }`}
               />
 
               <div
                 className={`h-1.5 flex-1 rounded-full ${
-                  strength >= 3 ? "bg-[#C8F400]" : "bg-gray-700"
+                  strength >= 3 ? "bg-[#FF8FC7]" : "bg-gray-700"
                 }`}
               />
 
               <div
                 className={`h-1.5 flex-1 rounded-full ${
-                  strength === 4 ? "bg-[#C8F400]" : "bg-gray-700"
+                  strength === 4 ? "bg-[#FF8FC7]" : "bg-gray-700"
                 }`}
               />
             </div>
@@ -184,12 +177,7 @@ const Register = () => {
                   value === password || "Passwords do not match",
               })}
               placeholder="Confirm password"
-              className={`w-full h-12 rounded-xl bg-[#1F1F1F] px-4 text-sm text-white placeholder:text-[#6C6C6B] outline-none transition
-    ${
-      errors.confirmPassword
-        ? "border border-red-500"
-        : "border border-[#303030] focus:border-[#C8F400]"
-    }`}
+              className={inputClass(errors.confirmPassword)}
             />
 
             {errors.confirmPassword && (
@@ -202,7 +190,7 @@ const Register = () => {
           {/* Button */}
           <button
             type="submit"
-            className="mt-2 h-12 w-full rounded-xl bg-[#C8F400] text-lg font-semibold text-black hover:brightness-95"
+            className="neu-accent neu-btn mt-2 h-12 w-full rounded-2xl text-lg font-semibold text-black"
           >
             Create Account →
           </button>
@@ -213,7 +201,7 @@ const Register = () => {
           Already have an account?
           <span
             onClick={() => navigate("/")}
-            className="ml-1 cursor-pointer font-semibold text-[#C8F400]"
+            className="ml-1 cursor-pointer font-semibold text-[#FF8FC7]"
           >
             Sign in
           </span>
