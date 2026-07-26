@@ -1,5 +1,12 @@
 import React from "react";
-import { Zap } from "lucide-react";
+import {Zap,
+  ShoppingCart,
+  LogOut,
+  Menu,
+  X,
+  User,
+  ChevronRight,
+  ShoppingBag } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
@@ -49,7 +56,7 @@ const Register = () => {
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-5">
           <div className="neu-sm w-9 h-9 rounded-2xl flex items-center justify-center">
-            <Zap className="w-4 h-4 text-[#FF8FC7] fill-[#FF8FC7]" />
+            <ShoppingBag className="w-4 h-4 text-[#FF8FC7] fill-[#FF8FC7]" />
           </div>
 
           <h1 className="text-3xl font-bold">
@@ -62,7 +69,7 @@ const Register = () => {
         <h2 className="text-2xl font-bold text-white">Create account</h2>
 
         <p className="mt-1 mb-5 text-sm text-[#6C6C6B]">
-          Join SkyMart and start shopping
+          Join PrimeBasket and start shopping
         </p>
 
         {/* Form */}

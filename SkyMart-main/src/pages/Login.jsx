@@ -1,5 +1,19 @@
 import React, { useState } from "react";
-import { Zap, Mail, Lock, Eye, EyeOff } from "lucide-react";
+import {
+  Zap,
+  Mail,
+  Lock,
+  Eye,
+  EyeOff,
+  ShoppingCart,
+  LogOut,
+  Menu,
+  X,
+  User,
+  ChevronRight,
+  ShoppingBag,
+} from "lucide-react";
+
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -52,7 +66,7 @@ const Login = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div className="neu w-12 h-12 rounded-2xl flex items-center justify-center">
-            <Zap className="w-6 h-6 text-[#FF8FC7] fill-[#FF8FC7]" />
+            <ShoppingBag className="w-6 h-6 text-[#FF8FC7] fill-[#FF8FC7]" />
           </div>
 
           <h1 className="text-3xl font-bold">
@@ -154,7 +168,10 @@ const Login = () => {
             {/* EMAIL */}
 
             <div className="mt-8 relative">
-              <Mail className="absolute left-5 top-4 text-[#666] z-10" size={20} />
+              <Mail
+                className="absolute left-5 top-4 text-[#666] z-10"
+                size={20}
+              />
 
               <input
                 type="email"
@@ -189,7 +206,10 @@ const Login = () => {
             {/* PASSWORD */}
 
             <div className="mt-5 relative">
-              <Lock className="absolute left-5 top-4 text-[#666] z-10" size={20} />
+              <Lock
+                className="absolute left-5 top-4 text-[#666] z-10"
+                size={20}
+              />
 
               <input
                 type={showPassword ? "text" : "password"}

@@ -102,11 +102,11 @@ const About = () => {
             className="mt-6 md:mt-8 text-4xl sm:text-5xl lg:text-6xl"
             style={{ fontFamily: "Clash Display" }}
           >
-            About <span className="text-[#FF8FC7]">SkyMart</span>
+            About <span className="text-[#FF8FC7]">PrimeBasket</span>
           </h1>
 
           <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-[#6C6C6B]">
-            SkyMart is a next-generation e-commerce platform built to make
+            PrimeBasket is a next-generation e-commerce platform built to make
             online shopping faster, smarter, and more enjoyable. We carefully
             curate products that combine quality, affordability, and seamless
             delivery.
