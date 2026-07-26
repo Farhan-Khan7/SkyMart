@@ -3,12 +3,11 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="neu mt-20 mx-4 sm:mx-8 mb-6 rounded-2xl py-10 text-center">
-      <h2 className="text-4xl font-bold">
-        Sky<span className="text-[#FF8FC7]">Mart</span>
+      <h2 className="text-4xl font-bold"><span className="text-[#FF8FC7]">PrimeBasket</span>
       </h2>
 
       <p className="text-[#6C6C6B] mt-4">
-        All Rights Reserved © 2026 SkyMart. Built with React & Tailwind CSS.
+        All Rights Reserved © 2026 PrimeBasket. Built with React & Tailwind CSS.
       </p>
 
       <p className="text-[#6C6C6B] mt-2">

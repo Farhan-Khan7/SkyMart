@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Target,
   Eye,
+  ShoppingBag,
 } from "lucide-react";
 import { useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
@@ -66,22 +67,22 @@ const About = () => {
 
   const team = [
     {
-      name: "Aryan Shah",
+      name: "Farhan khan",
       role: "Founder & CEO",
       color: "bg-lime-400",
     },
     {
-      name: "Priya Mehta",
+      name: "Abdur Rahim",
       role: "Head of Product",
       color: "bg-blue-500",
     },
     {
-      name: "Sahana Kadrolli",
+      name: "Farhan khan",
       role: "Lead Engineer",
       color: "bg-purple-500",
     },
     {
-      name: "Alexa Jhon",
+      name: "Areeb Sheikh",
       role: "Design Director",
       color: "bg-pink-500",
     },
@@ -95,7 +96,7 @@ const About = () => {
         {/* Hero */}
         <div className="max-w-3xl mx-auto text-center">
           <div className="neu w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mx-auto">
-            <Zap size={32} className="text-[#FF8FC7] fill-[#FF8FC7]" />
+            <ShoppingBag size={32} className="text-[#FF8FC7]" />
           </div>
 
           <h1
@@ -153,10 +154,10 @@ const About = () => {
             </h2>
 
             <p className="text-[#6C6C6B] leading-7 md:leading-8">
-              SkyMart began with a simple idea — online shopping should feel
+              PrimeBasket began with a simple idea — online shopping should feel
               effortless. We wanted to remove clutter, confusing interfaces, and
               overpriced products, replacing them with a clean shopping
-              experience focused on quality and speed.
+              experience foZcused on quality and speed.
             </p>
           </div>
 
@@ -201,7 +202,7 @@ const About = () => {
             className="text-center text-3xl md:text-5xl"
             style={{ fontFamily: "Clash Display" }}
           >
-            Why Choose SkyMart
+            Why Choose PrimeBasket
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:mt-12">
